@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage    xmlns="http://xamarin.com/schemas/2014/forms" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                xmlns:local="clr-namespace:DrinkingGames" 
+                x:Class="DrinkingGames.DrinkingGamesPage">
+	<ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2277FF" CornerRadius="0">
+                <Label Text="Calvin's Drinking Games!" FontSize="28" HorizontalOptions="Center" TextColor="White"/>
+            </Frame>
+            <Label Text="Players" HorizontalOptions="Center" FontSize="30"/>
+            <ScrollView>
+                <StackLayout x:Name="PlayersLayout" Padding="60,30,60,0" HeightRequest="200">
+                    
+                </StackLayout>
+            </ScrollView>
+            <StackLayout>
+                <Button Text="Vo" Clicked="AddPlayer"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
