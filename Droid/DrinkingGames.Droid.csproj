@@ -101,6 +101,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\BlueHorse.png" />
+    <AndroidResource Include="Resources\drawable\OrangeHorse.png" />
+    <AndroidResource Include="Resources\drawable\PurpleHorse.png" />
+    <AndroidResource Include="Resources\drawable\RedHorse.png" />
   </ItemGroup>
   <Import Project="..\DrinkingGames\DrinkingGames.projitems" Label="Shared" Condition="Exists('..\DrinkingGames\DrinkingGames.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

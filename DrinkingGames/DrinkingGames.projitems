@@ -11,6 +11,12 @@
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)DrinkingGamesPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)GamesOverview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)HorseRacer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -18,6 +24,12 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)DrinkingGamesPage.xaml.cs">
       <DependentUpon>DrinkingGamesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)GamesOverview.xaml.cs">
+      <DependentUpon>GamesOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)HorseRacer.xaml.cs">
+      <DependentUpon>HorseRacer.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

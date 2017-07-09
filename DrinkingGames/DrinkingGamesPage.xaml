@@ -4,19 +4,31 @@
                 xmlns:local="clr-namespace:DrinkingGames" 
                 x:Class="DrinkingGames.DrinkingGamesPage">
 	<ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="#2277FF">
             <Frame BackgroundColor="#2277FF" CornerRadius="0">
-                <Label Text="Calvin's Drinking Games!" FontSize="28" HorizontalOptions="Center" TextColor="White"/>
-            </Frame>
-            <Label Text="Players" HorizontalOptions="Center" FontSize="30"/>
-            <ScrollView>
-                <StackLayout x:Name="PlayersLayout" Padding="60,30,60,0" HeightRequest="200">
-                    
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Calvin's Drinking Games!" FontSize="28" HorizontalOptions="CenterAndExpand" TextColor="White"/>
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoDrink"/>
+                        </StackLayout.GestureRecognizers>
+                        
+                        <Frame HorizontalOptions="EndAndExpand" BackgroundColor="#2277FF" HeightRequest="1">
+                            <Button Text="Vo!" Clicked="GoDrink" TextColor="White" />
+                        </Frame>
+                        
+                    </StackLayout>
                 </StackLayout>
+            </Frame>
+            <Label Text="Players" HorizontalOptions="Center" FontSize="30"  TextColor="White"/>
+            <ScrollView>
+                <StackLayout x:Name="PlayersLayout" Padding="60,0,60,0" ></StackLayout>
             </ScrollView>
-            <StackLayout>
-                <Button Text="Vo" Clicked="AddPlayer"/>
+            
+            <StackLayout x:Name="AddPlayerBtn">
+                    <Button Text="Add Player"  Clicked="AddPlayer" TextColor="White"/>
             </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

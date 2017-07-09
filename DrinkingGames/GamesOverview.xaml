@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="DrinkingGames.GamesOverview">
+	<ContentPage.Content >
+        <StackLayout BackgroundColor="#2277FF">
+            <Frame BackgroundColor="#2277FF" CornerRadius="0">
+                <Label Text="Calvin's Drinking Games!" FontSize="28" HorizontalOptions="Center" TextColor="White"/>
+            </Frame>
+            
+            <Frame>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="HorseRaceTapped"/>
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Label Text="Horse Race"/>
+                </StackLayout>
+            </Frame>
+            
+            <Frame>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="QuestionTapped"/>
+                    </StackLayout.GestureRecognizers>
+                    
+                    <Label Text="Questions"/>
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
