@@ -13,11 +13,12 @@
                         </Frame.GestureRecognizers>
                         <Label Text="Start Game!"/>
                 </Frame>
-                 <Entry x:Name="DistanceNumber"/>    
+                   
             </StackLayout>
                 
             </Frame>
             <AbsoluteLayout>
+                <BoxView Color="#394C03" AbsoluteLayout.LayoutBounds="1,0,0.1,1" AbsoluteLayout.LayoutFlags="All"/>
                 <Image x:Name="RedHorse" Source="RedHorse.png"
                 AbsoluteLayout.LayoutBounds="0,0.05,0.1,0.15"  AbsoluteLayout.LayoutFlags="All"/>
                 <Image x:Name="BlueHorse" Source="BlueHorse.png"

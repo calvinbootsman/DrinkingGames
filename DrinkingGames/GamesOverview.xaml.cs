@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace DrinkingGames
@@ -11,7 +11,8 @@ namespace DrinkingGames
         {
             InitializeComponent();
 			var navigationPage = Application.Current.MainPage as NavigationPage;
-			navigationPage.BarBackgroundColor = Color.FromHex("#2277FF");
+			navigationPage.BarBackgroundColor = Color.FromHex("#2277FF");          
+
         }
 
         async void HorseRaceTapped(object sender, System.EventArgs e)

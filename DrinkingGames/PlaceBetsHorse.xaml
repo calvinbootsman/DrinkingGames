@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DrinkingGames.PlaceBetsHorse">
+	<ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="UsernameList" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Username}" FontSize="20"/>
+                                <Picker>
+                                    <Picker.Items>
+                                        <x:String>Red</x:String>
+                                        <x:String>Blue</x:String>
+                                        <x:String>Purple</x:String>
+                                        <x:String>Orange</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                                <Entry Keyboard="Numeric"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>    
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
