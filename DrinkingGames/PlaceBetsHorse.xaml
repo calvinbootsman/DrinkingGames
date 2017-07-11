@@ -12,7 +12,7 @@
                                 </Frame>
                                 <Picker x:Name="ColorPicker">
                                     <Picker.Items>
-                                        <x:String>Red</x:String>
+                                        <x:String>Reds</x:String>
                                         <x:String>Blue</x:String>
                                         <x:String>Purple</x:String>
                                         <x:String>Orange</x:String>
