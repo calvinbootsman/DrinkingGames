@@ -17,7 +17,7 @@ namespace DrinkingGames
 
         async void HorseRaceTapped(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new HorseRacer());
+            await Navigation.PushAsync(new PlaceBetsHorse());
         }
 
         void QuestionTapped(object sender, System.EventArgs e)

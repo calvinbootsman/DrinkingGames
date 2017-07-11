@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Xamarin.Forms;
-using PCLStorage;
 
 namespace DrinkingGames
 {
@@ -34,19 +33,17 @@ namespace DrinkingGames
         {
             int size = entry.Length;
             Debug.WriteLine(NumberOfPlayers.ToString());
-            var UsernameFile = await FileHandling.getFile("Names", "Usernames", false);
-            string usernames="";
+            PlayersBets.HorseBetsCollection.Clear();
             for (int i = 0; i < (NumberOfPlayers - 1); i++)
             {
                 Debug.WriteLine(i.ToString());
                 if (System.String.IsNullOrEmpty(entry[i].Text)) { }else{
-                    usernames += entry[i].Text + ";";
+                    PlayersBets.HorseBetsCollection.Add(new HorseBets { Username = entry[i].Text, Color = 0, Sips = 0 });
+
                     Debug.WriteLine(entry[i].Text+i.ToString());
                 }
 
             }
-			Debug.WriteLine(usernames);
-			await UsernameFile.WriteAllTextAsync(usernames);
             await Navigation.PushAsync(new GamesOverview());
         }
     }

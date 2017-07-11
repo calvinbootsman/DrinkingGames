@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 
 namespace DrinkingGames
@@ -12,7 +11,9 @@ namespace DrinkingGames
             InitializeComponent();
 			var navigationPage = Application.Current.MainPage as NavigationPage;
 			navigationPage.BarBackgroundColor = Color.FromHex("#99CC07");
-            FileHandling.getFile("Names","Usernames",true);
+            MakeList();
+            UsernameList.ItemsSource = PlayersBets.HorseBetsCollection;
+
         }
 		protected override void OnDisappearing()
 		{
@@ -21,6 +22,10 @@ namespace DrinkingGames
 			navigationPage.BarBackgroundColor = Color.FromHex("#2277FF");
 		}
 
+        async void MakeList(){
+            Picker colorPicker = ColorPicker;
+
+        }
 
     }
 }

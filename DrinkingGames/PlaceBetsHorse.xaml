@@ -2,19 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DrinkingGames.PlaceBetsHorse">
 	<ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="UsernameList" HasUnevenRows="true">
+            <ListView x:Name="UsernameList" HasUnevenRows="false">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
+                                <Frame>
                                 <Label Text="{Binding Username}" FontSize="20"/>
-                                <Picker>
+                                </Frame>
+                                <Picker x:Name="ColorPicker">
                                     <Picker.Items>
                                         <x:String>Red</x:String>
                                         <x:String>Blue</x:String>
                                         <x:String>Purple</x:String>
                                         <x:String>Orange</x:String>
                                     </Picker.Items>
+                                    <Picker.SelectedIndex>
+                                    </Picker.SelectedIndex>
                                 </Picker>
                                 <Entry Keyboard="Numeric"/>
                             </StackLayout>

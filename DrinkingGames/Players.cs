@@ -11,8 +11,8 @@ namespace DrinkingGames
 
     public class HorseBets{
         public string Username { get; set; }
-        public string Color { get; set; }
-        public int sips { get; set; }
+        public int Color { get; set; }
+        public int Sips { get; set; }
     }
 
 }
