@@ -13,7 +13,7 @@ namespace DrinkingGames
         {
             InitializeComponent();
             for (NumberOfPlayers =1; NumberOfPlayers <= 4; NumberOfPlayers++){
-                entry[NumberOfPlayers-1] = new Entry {Placeholder="Player "+ NumberOfPlayers.ToString() };
+                entry[NumberOfPlayers-1] = new Entry {Text="Player "+ NumberOfPlayers.ToString() };
                 PlayersLayout.Children.Add(entry[NumberOfPlayers-1]);
             }
 

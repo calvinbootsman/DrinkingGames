@@ -20,6 +20,12 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)PlaceBetsHorse.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)QuestionsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)AddQuestionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -38,6 +44,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)FileHandling.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PlaceBetsHorse.xaml.cs">
       <DependentUpon>PlaceBetsHorse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)QuestionsPage.xaml.cs">
+      <DependentUpon>QuestionsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AddQuestionPage.xaml.cs">
+      <DependentUpon>AddQuestionPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

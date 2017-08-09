@@ -20,9 +20,9 @@ namespace DrinkingGames
             await Navigation.PushAsync(new PlaceBetsHorse());
         }
 
-        void QuestionTapped(object sender, System.EventArgs e)
+        async void QuestionTapped(object sender, System.EventArgs e)
         {
-            
+            await Navigation.PushAsync(new QuestionsPage());
         }
 		protected override void OnAppearing()
 		{

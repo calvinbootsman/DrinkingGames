@@ -5,13 +5,26 @@
 	<ContentPage.Content>
         <StackLayout BackgroundColor="#99CC07">
             <Frame BackgroundColor="#99CC07" CornerRadius="0">
+                <Frame.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>5,5,5,5</OnIdiom.Phone>
+                        <OnIdiom.Tablet>20,20,20,20</OnIdiom.Tablet>
+                        </OnIdiom>
+                        
+                </Frame.Padding>
                 <StackLayout Padding="20,0,0,0" Orientation="Horizontal">
                     <Label Text="Horse Race" FontSize="16" HorizontalOptions="CenterAndExpand" TextColor="White"/>
-                    <Frame BackgroundColor="#B0D447" WidthRequest="110">
+                    <Frame BackgroundColor="#99CC07" WidthRequest="110">
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="StartGame"/>
                         </Frame.GestureRecognizers>
-                        <Label Text="Start Game!"/>
+                        <Frame.Padding>
+                            <OnIdiom x:TypeArguments="Thickness">
+                                <OnIdiom.Phone>5,5,5,5</OnIdiom.Phone>
+                                <OnIdiom.Tablet>5,5,5,5</OnIdiom.Tablet>
+                            </OnIdiom>
+                        </Frame.Padding>
+                        <Label Text="Start Game!" TextColor="White"/>
                 </Frame>
                    
             </StackLayout>
@@ -20,13 +33,13 @@
             <AbsoluteLayout>
                 <BoxView Color="#394C03" AbsoluteLayout.LayoutBounds="1,0,0.1,1" AbsoluteLayout.LayoutFlags="All"/>
                 <Image x:Name="RedHorse" Source="RedHorse.png"
-                AbsoluteLayout.LayoutBounds="0,0.05,0.1,0.15"  AbsoluteLayout.LayoutFlags="All"/>
+                AbsoluteLayout.LayoutBounds="0,0.05,0.1,0.2"  AbsoluteLayout.LayoutFlags="All"/>
                 <Image x:Name="BlueHorse" Source="BlueHorse.png"
-                AbsoluteLayout.LayoutBounds="0,0.25,0.1,0.15"  AbsoluteLayout.LayoutFlags="All"/>
+                AbsoluteLayout.LayoutBounds="0,0.3,0.1,0.2"  AbsoluteLayout.LayoutFlags="All"/>
                 <Image x:Name="PurpleHorse" Source="PurpleHorse.png"
-                AbsoluteLayout.LayoutBounds="0,0.45,0.1,0.15"  AbsoluteLayout.LayoutFlags="All"/>
+                AbsoluteLayout.LayoutBounds="0,0.55,0.1,0.2"  AbsoluteLayout.LayoutFlags="All"/>
                 <Image x:Name="OrangeHorse" Source="OrangeHorse.png"
-                AbsoluteLayout.LayoutBounds="0,0.65,0.1,0.15"  AbsoluteLayout.LayoutFlags="All"/>
+                AbsoluteLayout.LayoutBounds="0,0.80,0.1,0.2"  AbsoluteLayout.LayoutFlags="All"/>
             </AbsoluteLayout>
             <StackLayout Orientation="Horizontal" Padding="0,0,0,0"></StackLayout>
             <StackLayout Padding="20,0,20,30" VerticalOptions="EndAndExpand">

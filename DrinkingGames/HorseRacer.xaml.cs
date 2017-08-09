@@ -12,7 +12,7 @@ namespace DrinkingGames
 		int Purplex = 0;
         int Orangex = 0;
         int distance = 0;
-        uint time=750;
+        uint time=1000;
 
         public HorseRacer()
         {
@@ -21,11 +21,6 @@ namespace DrinkingGames
             var navigationPage = Application.Current.MainPage as NavigationPage;
             navigationPage.BarBackgroundColor = Color.FromHex("#99CC07");
 
-        }
-        protected override void OnDisappearing(){
-            //Turning the colors back to normal
-			var navigationPage = Application.Current.MainPage as NavigationPage;
-			navigationPage.BarBackgroundColor = Color.FromHex("#2277FF");
         }
 
         void StartGame(object sender, System.EventArgs e)
@@ -76,6 +71,7 @@ namespace DrinkingGames
             CommentaryLbl.FontSize = 32;
             return --i;
         }
+
         bool MoveHorses(){
             //Get the device width and make that the finnish line.
             double ddistance = Application.Current.MainPage.Width;
@@ -85,22 +81,27 @@ namespace DrinkingGames
             if (Redx >= distance || Bluex >= distance || Purplex >= distance || Orangex >= distance){
 				string[] positions = GetPositions();
 				CommentaryLbl.Text = "1." + positions[3] + " 2." + positions[2] + " 3." + positions[1] + " 4." + positions[0];
+                FinishedRace(positions[3]);
                 return false;
             }   
             //Make the horses move a random distance. The distance varies, but the time does not.
             var random = new System.Random();
-            int range = 30;
+            int range = 200;
+            switch(random.Next(0,4)){
+                case 0: Redx += range;  break;
+                case 1: Bluex += range;  break;
+                case 2: Purplex += range; break;
+                case 3: Orangex += range; break;
+            }/*
             int MoveRed = random.Next(0, range);
             int MoveBlue = random.Next(0, range);
             int MoveOrange = random.Next(0, range);
-            int MovePurple = random.Next(0, range);
+            int MovePurple = random.Next(0, range);*/
 
-            //Summing up the total distance in the Colorx vars.
-
-            Redx += MoveRed;
-            Bluex += MoveBlue;
-            Purplex += MovePurple;
-            Orangex += MoveOrange;
+            //Summing up the total distance in the Colorx vars.       
+            
+            
+            
 			AnimateHorses(Redx, Bluex, Orangex, Purplex);
 
 
@@ -147,6 +148,27 @@ namespace DrinkingGames
             );
        //             
 			//await RedHorse.RotateTo(30, time);
+        }
+        void FinishedRace(string first){
+            var bets = PlayersBets.HorseBetsCollection;
+            List<HorseBets> winners = new List<HorseBets>();
+           
+            string color ="";
+            foreach(HorseBets h in bets){
+                switch (h.Color){
+                    case 0: color = "Red"; break;
+                    case 1: color = "Blue"; break;
+                    case 2: color = "Purple"; break;
+                    case 3: color = "Orange"; break;    
+                }
+                Debug.WriteLine("Color: " + h.Color.ToString());
+				if (color == first){
+                    winners.Add(h); 
+                    DisplayAlert("Winner",h.Username + " can give out " + (h.Sips*2).ToString() + " sips!","Vo!");
+                }
+				DisplayAlert("Race has finished", first + " won!", "woo!");
+            }
+
         }
 
         string[] GetPositions(){
